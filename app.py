@@ -13,6 +13,20 @@ st.set_page_config(
     layout="wide",
 )
 
+# ----------------- HIDE STREAMLIT TOOLBAR & TOP-RIGHT BUTTONS -----------------
+hide_streamlit_style = """
+    <style>
+        #MainMenu {visibility: hidden;}
+        header {visibility: hidden;}
+        footer {visibility: hidden;}
+        .stActionButton {display: none !important;}
+        [data-testid="stToolbar"] {visibility: hidden !important; display: none !important;}
+        [data-testid="stDecoration"] {visibility: hidden !important; display: none !important;}
+        [data-testid="stStatusWidget"] {visibility: hidden !important; display: none !important;}
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 # ----------------- SUPABASE CONFIGURATION -----------------
 DEFAULT_URL = "https://tbeqbqgbteexnpneypjp.supabase.co"
 DEFAULT_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRiZXFicWdidGVleG5wbmV5cGpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc3NjE4NjMsImV4cCI6MjEwMzMzNzg2M30.S9JhQxwHuolBw3ZMPZ2u2P5ApfL7KwDEIK3VAwcpoYY"
